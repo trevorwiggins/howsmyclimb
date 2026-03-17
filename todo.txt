@@ -1,0 +1,6 @@
+TODO:
+
+think about user logins, if it could be incorporated
+
+Add divs with class section for each section of the statistics, start with the graph.
+

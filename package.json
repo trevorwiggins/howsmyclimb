@@ -1,0 +1,31 @@
+{
+  "name": "howsmyclimb",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000h\u0000o\u0000w\u0000s\u0000m\u0000y\u0000c\u0000l\u0000i\u0000m\u0000b\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "server": "node server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trevorwiggins/howsmyclimb.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/trevorwiggins/howsmyclimb/issues"
+  },
+  "homepage": "https://github.com/trevorwiggins/howsmyclimb#readme",
+  "dependencies": {
+    "express": "^5.2.1",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.0.1",
+    "vite": "^8.0.0"
+  }
+}
