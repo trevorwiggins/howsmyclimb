@@ -8,7 +8,13 @@
     src: url("./fonts/newsreader-italic-variable.ttf") format("truetype");
     font-style: italic;
 }
-
+/*
+@font-face {
+    font-family: "geist";
+    src: url("./fonts/geist-variable.ttf") format("truetype");
+    font-style: normal;
+}
+*/
 h1 {
     font-size: 5rem;
     color: hsl(0, 0%, 98%);  
@@ -21,18 +27,15 @@ h1 {
 body {
     background-color: hsl(0, 0%, 7%);
     margin: 0;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .hero {
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 1.5rem;
-    margin-top: -8rem;
     transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
@@ -51,15 +54,10 @@ body {
     padding: 0.6rem 0.75rem;
     font-size: 0.9rem;
     border: 1px solid hsl(0, 0%, 30%);
-    border-radius: 4px;
     background-color: hsl(0, 0%, 12%);
     color: hsl(0, 0%, 98%);
     cursor: pointer;
     outline: none;
-}
-
-.region-select:focus {
-    border-color: hsl(0, 0%, 60%);
 }
 
 .search-input {
@@ -67,14 +65,9 @@ body {
     padding: 0.6rem 1rem;
     font-size: 1rem;
     border: 1px solid hsl(0, 0%, 30%);
-    border-radius: 4px;
     background-color: hsl(0, 0%, 12%);
     color: hsl(0, 0%, 98%);
     outline: none;
-}
-
-.search-input:focus {
-    border-color: hsl(0, 0%, 60%);
 }
 
 .search-btn {
@@ -82,15 +75,10 @@ body {
     font-size: 0.85rem;
     font-weight: 600;
     letter-spacing: 0.05em;
-    background-color: hsl(0, 0%, 80%);
+    background-color: hsl(0, 0%, 98%);
     color: hsl(0, 0%, 7%);
     border: none;
-    border-radius: 4px;
     cursor: pointer;
-}
-
-.search-btn:hover {
-    background-color: hsl(0, 0%, 80%);
 }
 
 .section {
@@ -102,4 +90,53 @@ body {
 .section.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+.snap-container {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+}
+
+.snap-container > * {
+    scroll-snap-align: start;
+}
+
+.loading-wrapper {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fade-in 1.2s ease;
+}
+
+.loading-screen {
+  width: 40px;
+  aspect-ratio: 1;
+  margin: auto;
+  animation:
+    l3-1 2s infinite linear,
+    l3-2 3s infinite steps(1) -.5s;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes l3-1 {
+  0%   {transform: perspective(150px) rotateX(  0deg) rotateY(0deg)}
+  50%  {transform: perspective(150px) rotateX(180deg) rotateY(0deg)}
+  100% {transform: perspective(150px) rotateX(180deg) rotateY(180deg)}
+}
+@keyframes l3-2 {
+  0%  {background: hsl(0, 0%, 100%)}
+  33% {background: hsl(0, 0%, 80%)}
+  66% {background: hsl(0, 0%, 60%)}
 }
