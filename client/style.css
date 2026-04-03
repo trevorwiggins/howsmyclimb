@@ -104,6 +104,20 @@ body {
     scroll-snap-align: start;
 }
 
+.graph-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.snap-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 
 .loading-wrapper {
   transform: translateY(12px);

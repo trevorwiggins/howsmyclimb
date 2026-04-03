@@ -12,7 +12,7 @@ function buildLPCurve(matches, currentLP) {
   return reversed.reverse()
 }
 
-export default function Graph() {
+export default function Section3() {
   const ref = useReveal()
   const currentLP = ranked.find(r => r.queueType === 'RANKED_SOLO_5x5')?.leaguePoints ?? 0
   const data = buildLPCurve(matches, currentLP)
@@ -20,17 +20,16 @@ export default function Graph() {
   return (
     <div className="graph-section">
       <div ref={ref} className="section" style={{ width: '60%', height: 300 }}>
-      <ResponsiveContainer width="100%" height="100%">
-        <LineChart data={data}>
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis hide />
-          <YAxis />
-          <Tooltip formatter={(value) => [value, 'LP']} labelFormatter={(_, payload) => payload[0]?.payload.champion ?? ''} />
-          <Line dataKey="lp" stroke="#ffffff" dot={false} />
-        </LineChart>
-      </ResponsiveContainer>
+        <ResponsiveContainer width="100%" height="100%">
+          <LineChart data={data}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis hide />
+            <YAxis />
+            <Tooltip formatter={(value) => [value, 'LP']} labelFormatter={(_, payload) => payload[0]?.payload.champion ?? ''} />
+            <Line dataKey="lp" stroke="#ffffff" dot={false} />
+          </LineChart>
+        </ResponsiveContainer>
       </div>
     </div>
   )
 }
-
