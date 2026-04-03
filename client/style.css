@@ -94,28 +94,81 @@ body {
   transform: translateY(0);
 }
 
-.snap-container {
-    height: 100vh;
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory;
+.gs-container {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 80px 20px 200px;
 }
 
-.snap-container > * {
-    scroll-snap-align: start;
+.gs-graph {
+  width: 460px;
+  position: sticky;
+  top: 80px;
+  float: right;
+  height: 340px;
 }
 
-.graph-section {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.gs-chart {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
 }
 
-.snap-section {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.gs-chart-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.gs-sections {
+  width: 340px;
+}
+
+.gs-section {
+  margin-bottom: 220px;
+  opacity: 0.2;
+  transition: opacity 0.4s ease;
+}
+
+.gs-section:last-child {
+  margin-bottom: 60px;
+}
+
+.gs-section-active {
+  opacity: 1;
+}
+
+.gs-section h2 {
+  font-size: 1.4rem;
+  color: hsl(0, 0%, 98%);
+  font-family: "newsreader", serif;
+  font-style: italic;
+  font-weight: 400;
+  margin: 0 0 0.75rem;
+}
+
+.gs-section p {
+  font-size: 0.95rem;
+  font-family: "geist", sans-serif;
+  color: hsl(0, 0%, 70%);
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 700px) {
+  .gs-graph {
+    width: 100%;
+    float: none;
+    position: relative;
+    top: 0;
+  }
+
+  .gs-sections {
+    width: 100%;
+    padding-top: 380px;
+  }
 }
 
 
