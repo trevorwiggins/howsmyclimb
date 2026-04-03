@@ -8,20 +8,21 @@
     src: url("./fonts/newsreader-italic-variable.ttf") format("truetype");
     font-style: italic;
 }
-/*
+
 @font-face {
     font-family: "geist";
     src: url("./fonts/geist-variable.ttf") format("truetype");
     font-style: normal;
 }
-*/
+
 h1 {
     font-size: 5rem;
     color: hsl(0, 0%, 98%);  
     text-align: center;
     font-family: "newsreader", serif;
     font-style: italic;
-    font-weight: 400;       
+    font-weight: 400;
+    margin: 20px;       
 }
 
 body {
@@ -36,13 +37,11 @@ body {
     align-items: center;
     justify-content: center;
     gap: 1.5rem;
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .hero.fade-out {
-    opacity: 0;
-    transform: translateY(-12px);
-    pointer-events: none;
+    animation: fade-out 0.5s ease-out forwards;
 }
 
 .search-box {
@@ -53,6 +52,7 @@ body {
 .region-select {
     padding: 0.6rem 0.75rem;
     font-size: 0.9rem;
+    font-family: "geist";
     border: 1px solid hsl(0, 0%, 30%);
     background-color: hsl(0, 0%, 12%);
     color: hsl(0, 0%, 98%);
@@ -64,6 +64,7 @@ body {
     width: 320px;
     padding: 0.6rem 1rem;
     font-size: 1rem;
+    font-family: "geist";
     border: 1px solid hsl(0, 0%, 30%);
     background-color: hsl(0, 0%, 12%);
     color: hsl(0, 0%, 98%);
@@ -74,6 +75,7 @@ body {
     padding: 0.6rem 1.2rem;
     font-size: 0.85rem;
     font-weight: 600;
+    font-family: "geist";
     letter-spacing: 0.05em;
     background-color: hsl(0, 0%, 98%);
     color: hsl(0, 0%, 7%);
@@ -84,7 +86,7 @@ body {
 .section {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .section.visible {
@@ -102,12 +104,21 @@ body {
     scroll-snap-align: start;
 }
 
+
 .loading-wrapper {
+  transform: translateY(12px);
+  opacity: 0;
   height: 100vh;
   display: flex;
   align-items: center;
+  animation: fade-in 0.5s ease-in forwards;
+  transition: opacity 0.5s ease, transform 0.5s ease;
   justify-content: center;
-  animation: fade-in 1.2s ease;
+}
+
+
+.loading-wrapper.fade-out {
+  animation: fade-out 0.5s ease-out forwards;
 }
 
 .loading-screen {
@@ -119,17 +130,6 @@ body {
     l3-2 3s infinite steps(1) -.5s;
 }
 
-@keyframes fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 @keyframes l3-1 {
   0%   {transform: perspective(150px) rotateX(  0deg) rotateY(0deg)}
   50%  {transform: perspective(150px) rotateX(180deg) rotateY(0deg)}
@@ -139,4 +139,14 @@ body {
   0%  {background: hsl(0, 0%, 100%)}
   33% {background: hsl(0, 0%, 80%)}
   66% {background: hsl(0, 0%, 60%)}
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fade-out {
+  from { opacity: 1; }
+  to   { opacity: 0; }
 }

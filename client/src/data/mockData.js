@@ -107,226 +107,61 @@ export const championNames = {
 }
 
 // Match History API - /lol/match/v5/matches/{matchId}
-// 10 recent matches with realistic stats
-export const matches = [
-  {
-    metadata: { matchId: "NA1_5001" },
-    info: {
-      gameCreation: 1711584000000,
-      gameDuration: 1842,        // ~30 min
-      gameMode: "CLASSIC",
-      queueId: 420,              // solo/duo ranked
-      participants: [{
-        puuid: "mock-puuid-1234-5678-abcd",
-        championId: 236,
-        championName: "Lucian",
-        kills: 8, deaths: 3, assists: 7,
-        totalMinionsKilled: 214,
-        goldEarned: 14820,
-        totalDamageDealtToChampions: 24500,
-        visionScore: 28,
-        win: true,
-        teamPosition: "BOTTOM",
-        item0: 3031, item1: 3094, item2: 3085, item3: 3036, item4: 3006, item5: 0, item6: 3340,
-      }],
-    },
-  },
-  {
-    metadata: { matchId: "NA1_5002" },
-    info: {
-      gameCreation: 1711497600000,
-      gameDuration: 2104,
-      gameMode: "CLASSIC",
-      queueId: 420,
-      participants: [{
-        puuid: "mock-puuid-1234-5678-abcd",
-        championId: 51,
-        championName: "Caitlyn",
-        kills: 5, deaths: 6, assists: 9,
-        totalMinionsKilled: 198,
-        goldEarned: 13200,
-        totalDamageDealtToChampions: 19800,
-        visionScore: 32,
-        win: false,
-        teamPosition: "BOTTOM",
-        item0: 3031, item1: 3094, item2: 3085, item3: 3036, item4: 3006, item5: 0, item6: 3340,
-      }],
-    },
-  },
-  {
-    metadata: { matchId: "NA1_5003" },
-    info: {
-      gameCreation: 1711411200000,
-      gameDuration: 1560,
-      gameMode: "CLASSIC",
-      queueId: 420,
-      participants: [{
-        puuid: "mock-puuid-1234-5678-abcd",
-        championId: 236,
-        championName: "Lucian",
-        kills: 12, deaths: 2, assists: 5,
-        totalMinionsKilled: 187,
-        goldEarned: 15600,
-        totalDamageDealtToChampions: 28900,
-        visionScore: 22,
-        win: true,
-        teamPosition: "BOTTOM",
-        item0: 3031, item1: 3094, item2: 3085, item3: 3036, item4: 3006, item5: 3072, item6: 3340,
-      }],
-    },
-  },
-  {
-    metadata: { matchId: "NA1_5004" },
-    info: {
-      gameCreation: 1711324800000,
-      gameDuration: 2340,
-      gameMode: "CLASSIC",
-      queueId: 420,
-      participants: [{
-        puuid: "mock-puuid-1234-5678-abcd",
-        championId: 81,
-        championName: "Ezreal",
-        kills: 6, deaths: 5, assists: 11,
-        totalMinionsKilled: 230,
-        goldEarned: 14100,
-        totalDamageDealtToChampions: 21300,
-        visionScore: 35,
-        win: true,
-        teamPosition: "BOTTOM",
-        item0: 3042, item1: 3078, item2: 3508, item3: 3036, item4: 3158, item5: 0, item6: 3340,
-      }],
-    },
-  },
-  {
-    metadata: { matchId: "NA1_5005" },
-    info: {
-      gameCreation: 1711238400000,
-      gameDuration: 1680,
-      gameMode: "CLASSIC",
-      queueId: 420,
-      participants: [{
-        puuid: "mock-puuid-1234-5678-abcd",
-        championId: 222,
-        championName: "Jinx",
-        kills: 9, deaths: 4, assists: 6,
-        totalMinionsKilled: 202,
-        goldEarned: 14500,
-        totalDamageDealtToChampions: 26100,
-        visionScore: 25,
-        win: true,
-        teamPosition: "BOTTOM",
-        item0: 3031, item1: 3085, item2: 3094, item3: 3036, item4: 3006, item5: 0, item6: 3340,
-      }],
-    },
-  },
-  {
-    metadata: { matchId: "NA1_5006" },
-    info: {
-      gameCreation: 1711152000000,
-      gameDuration: 1920,
-      gameMode: "CLASSIC",
-      queueId: 420,
-      participants: [{
-        puuid: "mock-puuid-1234-5678-abcd",
-        championId: 145,
-        championName: "Kai'Sa",
-        kills: 3, deaths: 7, assists: 4,
-        totalMinionsKilled: 165,
-        goldEarned: 10800,
-        totalDamageDealtToChampions: 14200,
-        visionScore: 19,
-        win: false,
-        teamPosition: "BOTTOM",
-        item0: 3031, item1: 3085, item2: 3094, item3: 0, item4: 3006, item5: 0, item6: 3340,
-      }],
-    },
-  },
-  {
-    metadata: { matchId: "NA1_5007" },
-    info: {
-      gameCreation: 1711065600000,
-      gameDuration: 2010,
-      gameMode: "CLASSIC",
-      queueId: 420,
-      participants: [{
-        puuid: "mock-puuid-1234-5678-abcd",
-        championId: 236,
-        championName: "Lucian",
-        kills: 7, deaths: 4, assists: 8,
-        totalMinionsKilled: 195,
-        goldEarned: 13900,
-        totalDamageDealtToChampions: 22100,
-        visionScore: 30,
-        win: true,
-        teamPosition: "BOTTOM",
-        item0: 3031, item1: 3094, item2: 3085, item3: 3036, item4: 3006, item5: 3072, item6: 3340,
-      }],
-    },
-  },
-  {
-    metadata: { matchId: "NA1_5008" },
-    info: {
-      gameCreation: 1710979200000,
-      gameDuration: 1440,
-      gameMode: "CLASSIC",
-      queueId: 420,
-      participants: [{
-        puuid: "mock-puuid-1234-5678-abcd",
-        championId: 51,
-        championName: "Caitlyn",
-        kills: 10, deaths: 1, assists: 6,
-        totalMinionsKilled: 178,
-        goldEarned: 14200,
-        totalDamageDealtToChampions: 23400,
-        visionScore: 20,
-        win: true,
-        teamPosition: "BOTTOM",
-        item0: 3031, item1: 3094, item2: 3085, item3: 3036, item4: 3006, item5: 0, item6: 3340,
-      }],
-    },
-  },
-  {
-    metadata: { matchId: "NA1_5009" },
-    info: {
-      gameCreation: 1710892800000,
-      gameDuration: 2280,
-      gameMode: "CLASSIC",
-      queueId: 420,
-      participants: [{
-        puuid: "mock-puuid-1234-5678-abcd",
-        championId: 81,
-        championName: "Ezreal",
-        kills: 4, deaths: 8, assists: 7,
-        totalMinionsKilled: 210,
-        goldEarned: 12600,
-        totalDamageDealtToChampions: 18700,
-        visionScore: 27,
-        win: false,
-        teamPosition: "BOTTOM",
-        item0: 3042, item1: 3078, item2: 3508, item3: 3036, item4: 3158, item5: 0, item6: 3340,
-      }],
-    },
-  },
-  {
-    metadata: { matchId: "NA1_5010" },
-    info: {
-      gameCreation: 1710806400000,
-      gameDuration: 1740,
-      gameMode: "CLASSIC",
-      queueId: 420,
-      participants: [{
-        puuid: "mock-puuid-1234-5678-abcd",
-        championId: 236,
-        championName: "Lucian",
-        kills: 11, deaths: 3, assists: 4,
-        totalMinionsKilled: 192,
-        goldEarned: 15100,
-        totalDamageDealtToChampions: 27600,
-        visionScore: 24,
-        win: true,
-        teamPosition: "BOTTOM",
-        item0: 3031, item1: 3094, item2: 3085, item3: 3036, item4: 3006, item5: 3072, item6: 3340,
-      }],
-    },
-  },
+// 250 generated matches, oldest first (index 0 = 250 games ago)
+const CHAMPS = [
+  { id: 236, name: "Lucian" },
+  { id: 51,  name: "Caitlyn" },
+  { id: 81,  name: "Ezreal" },
+  { id: 222, name: "Jinx" },
+  { id: 145, name: "Kai'Sa" },
+  { id: 67,  name: "Vayne" },
+  { id: 119, name: "Draven" },
+  { id: 18,  name: "Tristana" },
 ]
+
+// Seeded pseudo-random so the data is consistent on every reload
+function seededRand(seed) {
+  let s = seed
+  return () => {
+    s = (s * 1664525 + 1013904223) & 0xffffffff
+    return (s >>> 0) / 0xffffffff
+  }
+}
+
+function generateMatches(count) {
+  const rand = seededRand(42)
+  const baseTime = 1711584000000
+  const result = []
+  // ~55% win rate to simulate a climbing player
+  for (let i = 0; i < count; i++) {
+    const champ = CHAMPS[Math.floor(rand() * CHAMPS.length)]
+    const win = rand() < 0.55
+    const kills = win ? Math.floor(rand() * 10) + 4 : Math.floor(rand() * 7) + 1
+    const deaths = win ? Math.floor(rand() * 4) + 1 : Math.floor(rand() * 6) + 2
+    const assists = Math.floor(rand() * 10) + 2
+    result.push({
+      metadata: { matchId: `NA1_${5001 + i}` },
+      info: {
+        gameCreation: baseTime - (count - i) * 3600000,
+        gameDuration: Math.floor(rand() * 1200) + 1200,
+        gameMode: "CLASSIC",
+        queueId: 420,
+        participants: [{
+          puuid: "mock-puuid-1234-5678-abcd",
+          championId: champ.id,
+          championName: champ.name,
+          kills, deaths, assists,
+          totalMinionsKilled: Math.floor(rand() * 80) + 150,
+          goldEarned: Math.floor(rand() * 5000) + 10000,
+          totalDamageDealtToChampions: Math.floor(rand() * 15000) + 10000,
+          visionScore: Math.floor(rand() * 20) + 15,
+          win,
+          teamPosition: "BOTTOM",
+        }],
+      },
+    })
+  }
+  return result
+}
+
+export const matches = generateMatches(250)

@@ -2,17 +2,16 @@ import { regions } from '../data/regions'
 import { useState, useEffect } from "react";
 
 export default function Home({ onLoaded }) {
-  const [state, setState] = useState("home") // states: "home" | "leaving" | "loading"
+  const [state, setState] = useState("home") // states: "home" | "leaving" | "loading" | "left"
 
   const handleSearch = () => {
-    /*const input = document.querySelector('.search-input').value
-    console.log(input)
-
-    const summonerFound = true; // swap with api result when added 
-
-    if (summonerFound) { */
+    /*
+    MAKE THIS HANDLE DATA LATER
+    OR JUST COMPLETELY REMOVE IT LATER
+    WHATEVER THE PROGRAM NEEDS
+    */
+    if (state !== "home") return;
     setState("leaving")
-    setTimeout(() => setState("loading"), 600)
   }
 
     useEffect(() => {
@@ -20,13 +19,24 @@ export default function Home({ onLoaded }) {
         //fake data load
         //const res = await fetch('/api/matches')
         //const matches = await res.json()
-        setTimeout(() => onLoaded(), 2000)
+        const id = setTimeout(() => setState("left"), 2500)
+        return () => clearTimeout(id)
       }
-    }, [state])
 
-    if (state === "loading") {
+      if (state === "leaving") {
+        const id = setTimeout(() => setState("loading"), 500)
+        return () => clearTimeout(id)
+      }
+
+      if (state === "left") {
+        const id = setTimeout(() => onLoaded(), 500)
+        return () => clearTimeout(id)
+      }
+    }, [state, onLoaded])
+
+    if (state === "loading" || state === "left") {
       return (
-        <div className="loading-wrapper">
+        <div className={`loading-wrapper ${state === "left" ? "fade-out" : "fade-in"}`}>
           <div className="loading-screen"></div>
         </div>
       )
@@ -41,7 +51,7 @@ export default function Home({ onLoaded }) {
             <option key={r.value} value={r.value}>{r.label}</option>
           ))}
         </select>
-        <input type="text" className="search-input" placeholder="Summoner name + #NA1" />
+        <input type="text" className="search-input" placeholder="Summoner name + #NA1" onKeyDown={e => e.key === "Enter" && handleSearch()} />
         <button className="search-btn" onClick={handleSearch}>SEARCH</button>
       </div>
     </main>
