@@ -139,6 +139,7 @@ function generateMatches(count) {
     const kills = win ? Math.floor(rand() * 10) + 4 : Math.floor(rand() * 7) + 1
     const deaths = win ? Math.floor(rand() * 4) + 1 : Math.floor(rand() * 6) + 2
     const assists = Math.floor(rand() * 10) + 2
+    const teamKills = kills + Math.floor(rand() * 20) + 10
     result.push({
       metadata: { matchId: `NA1_${5001 + i}` },
       info: {
@@ -146,6 +147,7 @@ function generateMatches(count) {
         gameDuration: Math.floor(rand() * 1200) + 1200,
         gameMode: "CLASSIC",
         queueId: 420,
+        teamKills,
         participants: [{
           puuid: "mock-puuid-1234-5678-abcd",
           championId: champ.id,

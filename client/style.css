@@ -96,17 +96,37 @@ body {
 
 .gs-container {
   position: relative;
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 80px 20px 200px;
 }
 
-.gs-graph {
-  width: 460px;
+.gs-graph-row {
+  width: calc(100% - 360px);
   position: sticky;
   top: 80px;
   float: right;
-  height: 340px;
+  display: flex;
+  gap: 16px;
+  align-items: stretch;
+}
+
+.gs-graph {
+  flex: 2;
+  height: 400px;
+  position: relative;
+}
+
+.gs-side-panel {
+  flex: 1;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  justify-content: center;
+  padding: 0 4px;
+  border-left: 1px solid hsl(0, 0%, 20%);
+  padding-left: 14px;
 }
 
 .gs-chart {
@@ -123,7 +143,7 @@ body {
 }
 
 .gs-sections {
-  width: 340px;
+  width: 320px;
 }
 
 .gs-section {
@@ -157,12 +177,76 @@ body {
   margin: 0;
 }
 
+.gs-side-lorem {
+  font-size: 0.78rem;
+  font-family: "geist", sans-serif;
+  color: hsl(0, 0%, 45%);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.gs-side-champion {
+  font-size: 0.85rem;
+  font-family: "geist", sans-serif;
+  color: hsl(0, 0%, 85%);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.gs-side-result {
+  font-size: 1.1rem;
+  font-family: "newsreader", serif;
+  font-style: italic;
+  font-weight: 400;
+  margin: 0;
+}
+
+.gs-side-date {
+  font-size: 0.78rem;
+  font-family: "geist", sans-serif;
+  color: hsl(0, 0%, 50%);
+  margin: 0;
+}
+
+.gs-side-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.gs-side-stats span {
+  font-size: 0.8rem;
+  font-family: "geist", sans-serif;
+  color: hsl(0, 0%, 75%);
+}
+
+.gs-side-stats span:first-child {
+  color: hsl(0, 0%, 95%);
+  font-size: 0.85rem;
+}
+
+.gs-side-champion em {
+  font-style: italic;
+  font-family: "newsreader", serif;
+  font-size: 1rem;
+  color: hsl(0, 0%, 98%);
+}
+
 @media (max-width: 700px) {
-  .gs-graph {
+  .gs-graph-row {
     width: 100%;
     float: none;
     position: relative;
     top: 0;
+    flex-direction: column;
+  }
+
+  .gs-side-panel {
+    height: auto;
+    border-left: none;
+    border-top: 1px solid hsl(0, 0%, 20%);
+    padding-left: 0;
+    padding-top: 14px;
   }
 
   .gs-sections {
